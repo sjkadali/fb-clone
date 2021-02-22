@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fb-clone-94c9d": {
+      "hosting": {
+        "fb-clone": [
+          "fb-clone-94c9d"
+        ]
+      }
+    }
+  }
+}
