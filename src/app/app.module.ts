@@ -7,8 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
-//import { HomeModule } from './components/home/home.module';
 import { HomeComponent } from './components/home/home.component';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { HomeComponent } from './components/home/home.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     MaterialModule,
-    FormsModule,   
+    FormsModule, 
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireAuthModule  
   ], 
   providers: [],
   bootstrap: [AppComponent]
