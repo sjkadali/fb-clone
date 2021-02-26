@@ -124,8 +124,8 @@
               mat-card-avatar
               [src]="user?.avatar">
             <form #form="ngForm" (ngSubmit)="postMessage(form)">
-              <input class="on-your-mind" name="message" ngModel placeholder="What's on your mind?" type="text">
-              <button style="display: none;" type="submit"></button>
+              <p><input class="on-your-mind" name="message" ngModel placeholder="What's on your mind?" type="text">
+              <button  type="submit">Post</button> </p>
             </form>
           </mat-card-header>
           <mat-card-content class="card-body">
