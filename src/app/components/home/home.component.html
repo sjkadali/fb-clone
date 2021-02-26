@@ -28,8 +28,8 @@
         </div>
         <div class="home__header__right">
             <div class="active">
-                <img src="" alt="avatar" mat-card-avatar>
-                <span class="name">My name</span>
+                <img [src]="user?.avatar" alt="avatar" mat-card-avatar>
+                <span class="name">{{user?.firstName || 'Default User'}}</span>
             </div>
             <div>
                 <mat-icon>add</mat-icon>
@@ -52,7 +52,7 @@
             </div>           
             <mat-icon [matMenuTriggerFor]="menu">expand__more</mat-icon>
             <mat-menu #menu="matMenu">
-                <Button mat-menu-item>
+                <Button mat-menu-item (click)="logOut()">
                     <mat-icon>exit__to__app</mat-icon>Logout
                 </Button>
             </mat-menu>                             
@@ -62,14 +62,14 @@
   <div class="home__body">
     <div class="home__body__sidebarLeft">
       <div class="inside">
-        <!-- <div class="user-avatar">
+        <div class="user-avatar">
           <img
             alt=""
             mat-card-avatar
           
             src="{{ user?.avatar }}">
-        <span class="name">{{ user?.firstName || 'Indranil'}} {{ user?.lastName }}</span>
-        </div> -->
+        <span class="name">{{ user?.firstName || 'user'}} {{ user?.lastName }}</span>
+        </div>
         <div>
           <mat-icon> local_hospital</mat-icon>
           <span class="covid">COVID-19 Information Center</span>
@@ -122,7 +122,7 @@
             <img
               alt=""
               mat-card-avatar
-              [src]="">
+              [src]="user?.avatar">
             <form #form="ngForm" (ngSubmit)="postMessage(form)">
               <input class="on-your-mind" name="message" ngModel placeholder="What's on your mind?" type="text">
               <button style="display: none;" type="submit"></button>
@@ -149,7 +149,7 @@
           <mat-card-header class="posts__header">
             <img alt="{{ p?.title }}" mat-card-avatar [src]="p?.avatar">
             <div class="posts__header__right">
-              <span>{{ p?.time?.seconds * 1000 | date:'shortTime' }}</span>
+              <span>{{ p?.time?.seconds * 1000 | date:'medium' }}</span>
               <h3>{{ p?.title }}</h3>
             </div>
           </mat-card-header>
@@ -164,5 +164,8 @@
         <img alt="feed" src="assets/feed2.jpg">
       </div>
     </div>
+    </div>
+    <div class="home__footer">
+        <a href="https://www.freepik.com/vectors/people">People vector created by freepik - www.freepik.com</a>  
     </div>
 </div>

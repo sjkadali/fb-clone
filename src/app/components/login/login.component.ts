@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   login(form: NgForm): void {
     const {email, password} = form.value;
+    console.log("login details: "+ form.value,  email, password);
 
     if (!form.valid) {
       return;
@@ -57,8 +58,9 @@ export class LoginComponent implements OnInit, OnDestroy {
 
         if (result !== undefined) {
           this.authService.signUp(email, password, fname, lname, avatar);
-        } 
-        return;
+        } else {
+          return;
+        }       
       });
   }
 

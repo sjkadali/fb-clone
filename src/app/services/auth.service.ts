@@ -44,10 +44,13 @@ export class AuthService {
         password: string,
         firstName: string,
         lastName: string,
-        avatar ='https://img.favpng.com/23/0/3/computer-icons-user-profile-clip-art-portable-network-graphics-png-favpng-YEj6NsJygkt6nFTNgiXg9fg9w.jpg'): void {
+        avatar: string ): void {
           this.afAuth.createUserWithEmailAndPassword(email, password)
           .then( res => {
             if (res) {
+              if (avatar == undefined || avatar == '') {
+                avatar ='https://img.favpng.com/23/0/3/computer-icons-user-profile-clip-art-portable-network-graphics-png-favpng-YEj6NsJygkt6nFTNgiXg9fg9w.jpg';
+              }             
               this.afs.collection('users').doc(res.user.uid)
               .set({
                 firstName,
