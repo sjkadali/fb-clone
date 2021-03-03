@@ -1,6 +1,8 @@
 # Facebook Clone
 
-This project was created using Angular & Firebase
+This project was created using Angular & Firebase.
+
+![2021-02-26 (1)](https://user-images.githubusercontent.com/39105848/109734320-cecc4c80-7b8e-11eb-9dcd-8a83f18c7678.png)
 
 ## Development server
 
